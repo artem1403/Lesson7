@@ -13,4 +13,5 @@ services:
         working_dir: /my_app
         command: ["mvn", "clean", "install"]
                 
-
+volumes:
+    /usr/src/lesson7/boxfuse-sample-java-war-hello: 
