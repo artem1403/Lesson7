@@ -3,8 +3,8 @@ version: "3"
 services:
     maven:
         image: maven:3.8.1-openjdk-15
-        command: ["mvn", "package", "./boxfuse-sample-java-war-hello/pom.xml"]
-        # volumes: maven-repo:/usr/local/myapp
+        command: ["mvn", "package"]
+        volumes: ${APPLICATION_ROOT_FOLDER}:/usr/src/lesson7
 
 # volumes:
 #     maven-repo: {}
