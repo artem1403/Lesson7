@@ -2,12 +2,11 @@ version: "3"
 
 services:
     maven:
-        name: my-maven-project
         image: maven:3-openjdk-11
         command: ["mvn", "clean", "install"]
         volumes: 
             - type: bind
-            source: /usr/src/lesson7/boxfuse-sample-java-war-hello
-            target: /my_app
+              source: /usr/src/lesson7/boxfuse-sample-java-war-hello
+              target: /my_app
 
 
