@@ -5,9 +5,9 @@ services:
         image: maven:3-openjdk-11
         volumes: 
             - type: volume
-            source: /usr/src/lesson7/boxfuse-sample-java-war-hello
-            target: /my_app
-            volume:
+              source: /usr/src/lesson7/boxfuse-sample-java-war-hello
+              target: /my_app
+              volume:
                 nocopy: true
         
         working_dir: /my_app
