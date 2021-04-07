@@ -1,14 +1,16 @@
-version: "3"
+version: "3.2"
 
 services:
     maven:
         image: maven:3-openjdk-11
-        command: ["mvn", "clean", "install"]
         volumes: 
             - type: volume
-              source: /usr/src/lesson7/boxfuse-sample-java-war-hello
-              target: /my_app
-              volume:
+            source: /usr/src/lesson7/boxfuse-sample-java-war-hello
+            target: /my_app
+            volume:
                 nocopy: true
-
+        
+        working_dir: /my_app
+        command: ["mvn", "clean", "install"]
+                
 
