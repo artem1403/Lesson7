@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    maven:
+        image: maven:3.8.1-openjdk-15
+        # volumes: maven-repo:/usr/local/myapp
+
+# volumes:
+#     maven-repo: {}
+    
