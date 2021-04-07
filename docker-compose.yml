@@ -1,11 +1,10 @@
-version: "3"
+version: "3.2"
 
 services:
     maven:
-        image: maven:3.8.1-openjdk-15
-        command: ["mvn", "package"]
-        volumes: maven-repo:/usr/src/lesson7
-
-volumes:
-    maven-repo:
-    
+        image: maven:3-openjdk-11
+        volumes: 
+            - /usr/src/lesson7/boxfuse-sample-java-war-hello:/my_app
+        
+        working_dir: /my_app
+        command: ["mvn", "clean", "install"]
