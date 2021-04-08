@@ -5,15 +5,13 @@ services:
         build: maven/
         volumes: 
             - repo:/my_app
-        links:
-            - tomcat
 
     tomcat:
         image: tomcat:9.0-jdk8-adoptopenjdk-hotspot
-        ports:
-            8080:8080
         depends_on:
             - "maven"
+        ports:
+            - 8080:8080
         volumes: 
             - repo:/usr/local/tomcat/webapps/
 
