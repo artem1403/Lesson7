@@ -11,6 +11,14 @@
 * [ ] Собрать продовский контейнер с легковесным томкатом
 
 ## Памятка по командам
+### Docker
+```
+docker volume ls
+docker volume rm _name
+docker-compose up --build
+docker-compose down
+```
+
 ### Git submodules
 Добавление подмодуля
 ```bash

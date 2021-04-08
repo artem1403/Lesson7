@@ -2,9 +2,18 @@ version: "3.2"
 
 services:
     maven:
-        image: maven:3-openjdk-11
+        build: maven/
         volumes: 
-            - /usr/src/lesson7/boxfuse-sample-java-war-hello:/my_app
-        
-        working_dir: /my_app
-        command: ["mvn", "clean", "install"]
+            - repo:/usr/local
+
+    tomcat:
+        image: tomcat:9.0-jdk8-adoptopenjdk-hotspot
+        depends_on:
+            - "maven"
+        ports:
+            - 8080:8080
+        volumes: 
+            - repo:/usr/local/tomcat/webapps/
+
+volumes:
+    repo:
